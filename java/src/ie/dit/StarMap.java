@@ -85,14 +85,27 @@ public class StarMap extends PApplet
             fill(255);
             text(s.getDisplayName(), x + 20, y);
             
-            
-
         }
     } 
 
-    public void mousePressed()
+    boolean selected1;
+    boolean selected2;
+
+    public void mouseClicked()
     {
-        //mouseX, mouseY;    
+        for(int i; i < stars.size(); i++)
+        {
+            Start s = stars.get(i);
+            float x = map(s.getxG(), -5, 5, border, width - border);
+            float y = map(s.getyG(), -5, 5, border, height - border);
+
+            if (dist(mouseX, mouseY, x, y) < s.getAbsMag() / 2 ) {
+                
+            }
+        }
+
+
+
     }
 
     public void draw()
